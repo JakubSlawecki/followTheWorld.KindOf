@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,61 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="followTheWorld_KindOf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WE2-gr-G1G">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzY-Rx-dgI">
+                                <rect key="frame" x="20" y="651" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="8wR-3V-jDM"/>
+                                    <constraint firstAttribute="width" constant="65" id="9vH-Dl-RJh"/>
+                                </constraints>
+                                <state key="normal" image="addBtn2"/>
+                                <connections>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="biE-Iz-QIi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15t-Fb-Pmd">
+                                <rect key="frame" x="329" y="651" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="ZUq-Zd-Pdt"/>
+                                    <constraint firstAttribute="height" constant="65" id="hhK-7j-0Nz"/>
+                                </constraints>
+                                <state key="normal" image="resetBtn"/>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yvq-0I-Etb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OzY-Rx-dgI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6d3-Ph-NAd"/>
+                            <constraint firstAttribute="bottom" secondItem="15t-Fb-Pmd" secondAttribute="bottom" constant="20" id="FMk-8h-c8p"/>
+                            <constraint firstItem="WE2-gr-G1G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HfI-5h-3Kp"/>
+                            <constraint firstItem="WE2-gr-G1G" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Inl-j6-T6d"/>
+                            <constraint firstItem="WE2-gr-G1G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KRB-a8-adc"/>
+                            <constraint firstItem="WE2-gr-G1G" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LsB-3h-LNM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OzY-Rx-dgI" secondAttribute="bottom" constant="20" id="oCB-IP-6yT"/>
+                            <constraint firstAttribute="trailing" secondItem="15t-Fb-Pmd" secondAttribute="trailing" constant="20" id="xgC-IC-NQC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="WE2-gr-G1G" id="Mf8-uu-hC6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addBtn2" width="512" height="512"/>
+        <image name="resetBtn" width="234" height="234"/>
+    </resources>
 </document>
